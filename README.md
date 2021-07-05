@@ -1,3 +1,5 @@
+/!\ Only work well with 1440x900 and 375x667 screen sizes (Use [DevTools Device Toolbar](https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/))
+
 # Frontend Mentor - Launch countdown timer solution
 
 This is a solution to the [Launch countdown timer challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -27,13 +29,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./assets/design/screenshot-mobile.png)
-![](./assets/design/screenshot-pc.png)
+![](./src/assets/design/screenshot-mobile.png)
+![](./src/assets/design/screenshot-pc.png)
 
 ### Links
 
 - [Solution URL](https://github.com/Hanasagi/Launch-Countdown-FrontedMentor)
-- [Live Site URL](https://your-live-site-url.com)
+- [Live Site URL](https://countdown-hanasagi.netlify.app/)
 
 ## My process
 
