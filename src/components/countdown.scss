@@ -1,0 +1,252 @@
+$grayBlue:hsl(237, 18%, 59%);
+$red:hsl(345, 95%, 68%);
+$white:hsl(0, 0%, 100%);
+$desatBlue:hsl(236, 21%, 26%);
+$veryDarkBlue:hsl(235, 16%, 14%);
+$almostBlackBlue:hsl(234, 17%, 12%);
+$svgColor:rgb(26, 24, 35);
+@import url("https://fonts.google.com/specimen/Red+Hat+Text");
+
+@mixin borderTopRadius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin borderBottomRadius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+body {
+  backdrop-filter: hue-rotate(85deg) saturate(35%) brightness(70%);
+  margin: 0;
+  background-color: $svgColor;
+  background-image: url(../assets/images/bg-stars.svg);
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  color: $white;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../assets/images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+
+  &>p:first-of-type {
+    font-size: 25px;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 13%;
+    transform: scale(1.1, 1);
+  }
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  transform: translateY(-30%);
+
+  .counterWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0.7vw;
+
+    &>p {
+      margin-top: 2vh;
+      transform: scale(1.1, 1);
+    }
+
+    &>div {
+      background: $almostBlackBlue;
+      width: 11vw;
+      height: 17vh;
+      position: relative;
+      @include borderTopRadius(6px) @include borderBottomRadius(6px) overflow: hidden;
+    }
+
+    &>div>div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 95%;
+
+    }
+
+    .top {
+      position: absolute;
+      background: lighten($veryDarkBlue, 4%);
+      height: 50%;
+      overflow: hidden;
+      border-bottom: 1px solid $almostBlackBlue;
+      width: inherit;
+      z-index: 15;
+      //animation:test 1s ease infinite;
+    }
+
+    .top:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: $almostBlackBlue;
+      position: absolute;
+      border-radius: 50%;
+      bottom: -5px;
+      left: -5px;
+    }
+
+    .top:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: $almostBlackBlue;
+      position: absolute;
+      border-radius: 50%;
+      bottom: -5px;
+      right: -5px;
+      overflow: hidden;
+    }
+
+    .bottom {
+      background-color: $desatBlue;
+      position: relative;
+      z-index: 10;
+      @include borderTopRadius(6px) @include borderBottomRadius(6px)
+    }
+
+    .bottom:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: $almostBlackBlue;
+      position: absolute;
+      border-radius: 50%;
+      top: calc(50% - 2px);
+      left: -5px;
+    }
+
+    .bottom:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: $almostBlackBlue;
+      position: absolute;
+      border-radius: 50%;
+      top: calc(50% - 2px);
+      right: -5px;
+    }
+
+    &>div>div>p {
+      color: $red;
+      font-size: 86px;
+      letter-spacing: 0;
+    }
+
+    .top>p {
+      transform: translateY(4.6vh) scale(1.1, 1);
+      color: darken($red, 5%);
+    }
+
+    .bottom>p {
+      transform: translateY(0.9vh) scale(1.1, 1);
+    }
+
+    &>p {
+      color: $grayBlue;
+    }
+  }
+
+}
+
+.network {
+  display: flex;
+  position: absolute;
+  bottom: 7%;
+}
+
+.icon {
+  width: 2vw;
+  height: 2vw;
+  margin: 0 1vw;
+
+  &:hover {
+    &>svg>path {
+      fill: $red;
+    }
+
+    cursor: pointer;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1vh;
+
+  &>a {
+    text-decoration: none;
+    color: $grayBlue;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+@media screen and (max-width:375px) {
+  body {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+
+  #main {
+    background-position: 80% bottom;
+
+    &>p:first-of-type {
+      text-align: center;
+      font-size: 19px;
+      letter-spacing: 7px;
+      transform: none;
+    }
+  }
+
+  .counter .counterWrap {
+    margin: 0 2vw;
+
+    &>div>div>p {
+      font-size: 40px;
+    }
+
+    &>div {
+      width: 20vw;
+      height: 13vh;
+    }
+
+    .top>p {
+      transform: translateY(3.5vh) scale(1.1, 1);
+    }
+
+    .bottom>p {
+      transform: translateY(0.7vh) scale(1.1, 1);
+    }
+
+  }
+
+  .icon {
+    margin: 0 5vw;
+  }
+
+  .attribution {
+    text-align: center;
+  }
+}
