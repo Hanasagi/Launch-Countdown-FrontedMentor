@@ -1,4 +1,4 @@
-/!\ Only work well with 1440x900 and 375x667 screen sizes (Use [DevTools Device Toolbar](https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/))
+/!\ Only work well with 1440x800 and 375x667 screen sizes (Use [DevTools Device Toolbar](https://www.sitepoint.com/how-to-simulate-mobile-devices-with-device-mode-in-chrome/))
 
 # Frontend Mentor - Launch countdown timer solution
 
